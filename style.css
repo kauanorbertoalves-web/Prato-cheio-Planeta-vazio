@@ -1,0 +1,176 @@
+/* ===== Variáveis (CSS-10: reutilização) ===== */
+:root {
+  --alface: #e8f1cf;
+  --papel: #fffdf4;
+  --beterraba: #4a1633;
+  --tomate: #d9381e;
+  --folha: #2c7a43;
+  --gema: #ffb703;
+  --tinta: #231a1f;
+  --suave: #5a4a52;
+  --titulo: Impact, "Arial Narrow Bold", "Haettenschweiler", "Arial Black", sans-serif;
+  --texto: Georgia, "Times New Roman", serif;
+  --recibo: "Courier New", Courier, monospace;
+}
+
+/* ===== Base (CSS-04: box model) ===== */
+*, *::before, *::after { box-sizing: border-box; }
+html { scroll-behavior: smooth; scroll-padding-top: 4.5rem; }
+body { margin: 0; background: var(--alface); color: var(--tinta); font: 1.125rem/1.75 var(--texto); }
+h1, h2, h3 { font-family: var(--titulo); font-weight: 400; line-height: 1.05; margin: 0 0 .7rem; letter-spacing: .01em; }
+h2 { font-size: clamp(2.2rem, 6vw, 3.6rem); }
+h3 { font-size: 1.6rem; }
+p { margin: 0 0 1rem; max-width: 66ch; }
+a { color: var(--tomate); }
+:focus-visible { outline: 3px solid var(--gema); outline-offset: 3px; }
+.container { width: min(1080px, 100% - 2.5rem); margin-inline: auto; }
+.secao { padding-block: 4.5rem; }
+.escura { background: var(--beterraba); color: #fbeff3; }
+.escura a { color: var(--gema); }
+.lead { font-size: 1.3rem; }
+
+/* ===== Navegação (CSS-07: flexbox) ===== */
+.topo { position: sticky; top: 0; z-index: 10; background: var(--tomate); }
+.menu { display: flex; flex-wrap: wrap; align-items: center; justify-content: space-between; gap: .3rem 1.5rem; padding-block: .6rem; }
+.marca { font-family: var(--titulo); font-size: 1.4rem; color: #fff; text-decoration: none; }
+.menu ul { display: flex; flex-wrap: wrap; gap: .2rem 1.1rem; list-style: none; margin: 0; padding: 0; }
+.menu li a { color: #fff; font: 700 .95rem/1.4 Arial, sans-serif; text-decoration: none; }
+.menu li a:hover { text-decoration: underline; text-underline-offset: 4px; }
+.prog { height: 5px; width: 0; background: var(--gema); }
+
+/* ===== Faixa de alimentos (animação contínua, só CSS) ===== */
+.faixa { overflow: hidden; background: var(--gema); border-block: 3px solid var(--beterraba); white-space: nowrap; }
+.faixa div { display: inline-block; padding: .4rem 0; font-size: 1.7rem; animation: corre 30s linear infinite; }
+@keyframes corre { to { transform: translateX(-50%); } }
+
+/* ===== Hero: prato que vai sendo preenchido ===== */
+@property --fatia { syntax: "<percentage>"; inherits: false; initial-value: 0%; }
+.hero { padding-block: 3.5rem 4rem; }
+.hero__grid { display: grid; grid-template-columns: 1.25fr 1fr; gap: 2.5rem; align-items: center; }
+.hero h1 { font-size: clamp(2.6rem, 8vw, 5.4rem); text-transform: uppercase; }
+.hero h1 span { background: var(--tomate); color: #fff; padding: 0 .25em; box-decoration-break: clone; -webkit-box-decoration-break: clone; }
+.prato {
+  --fatia: 33.3%;
+  width: min(100%, 340px); aspect-ratio: 1; margin-inline: auto; border-radius: 50%;
+  background: conic-gradient(var(--tomate) 0 var(--fatia), #fff var(--fatia) 100%);
+  border: 8px solid var(--beterraba); box-shadow: 0 0 0 8px #fff, 0 0 0 11px var(--beterraba);
+  display: grid; place-items: center; text-align: center; padding: 2rem;
+  font: 400 1.5rem/1.15 var(--titulo); animation: enche 2.2s ease-out both .3s;
+}
+.prato b { display: block; font-size: 3.4rem; color: var(--beterraba); background: #fff; border-radius: 12px; padding: 0 .4rem; }
+@keyframes enche { from { --fatia: 0%; } }
+
+/* ===== Etiquetas de preço (cartões) ===== */
+.grade { display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 1.6rem; margin-top: 2.2rem; }
+.etiqueta { position: relative; background: var(--papel); color: var(--tinta); border: 3px solid var(--beterraba); border-radius: 6px 28px 6px 28px; padding: 2rem 1.4rem 1.4rem; }
+.etiqueta::before { content: ""; position: absolute; top: .7rem; left: 1.1rem; width: 14px; height: 14px; border-radius: 50%; border: 3px solid var(--beterraba); background: var(--alface); }
+.etiqueta p { margin: 0; font-size: 1rem; line-height: 1.6; }
+.etiqueta--tomate { box-shadow: 7px 7px 0 var(--tomate); }
+.etiqueta--folha { box-shadow: 7px 7px 0 var(--folha); }
+.etiqueta--gema { box-shadow: 7px 7px 0 var(--gema); }
+.numero { font: 400 3.4rem/1 var(--titulo); color: var(--tomate); margin: 0 0 .3rem; }
+
+/* ===== Gráfico em CSS (anima ao carregar / ao rolar) ===== */
+.grafico { margin: 2rem 0 0; max-width: 760px; background: var(--papel); color: var(--tinta); border: 3px solid var(--beterraba); border-radius: 6px; padding: 1.4rem; }
+.barra { display: grid; grid-template-columns: 10rem 1fr; gap: .8rem; align-items: center; margin-bottom: .8rem; font-size: 1rem; }
+.trilho { background: #e3dfcf; border-radius: 4px; }
+.valor { background: var(--folha); color: #fff; font: 400 1.3rem/1.5 var(--titulo); padding: 0 .7rem; border-radius: 4px; animation: cresce 1.4s ease-out both; }
+.v60 { width: 60%; background: var(--tomate); } .v28 { width: 28%; } .v12 { width: 12%; min-width: 4rem; }
+@keyframes cresce { from { width: 0; } }
+@supports (animation-timeline: view()) {
+  .valor { animation: cresce linear both; animation-timeline: view(); animation-range: entry 10% cover 35%; }
+  .prog { animation: avanca linear both; animation-timeline: scroll(root); }
+  @keyframes avanca { to { width: 100%; } }
+}
+figcaption { font-size: .9rem; color: var(--suave); margin-top: 1rem; line-height: 1.5; }
+
+/* ===== Checklist de hábitos (checkbox + contador CSS) ===== */
+.habitos { counter-reset: feitos; margin-top: 1.5rem; }
+.habitos ol { list-style: none; padding: 0; margin: 1.2rem 0; display: grid; gap: .9rem; }
+.habitos li:has(input:checked) { counter-increment: feitos; }
+.habito { display: flex; gap: 1rem; align-items: flex-start; cursor: pointer; background: var(--papel); border: 3px solid var(--beterraba); border-radius: 10px; padding: 1rem 1.2rem; transition: background .2s, transform .2s; }
+.habito:hover { transform: translateX(6px); }
+.habito:has(input:checked) { background: #d6efc9; border-color: var(--folha); }
+.habito input { appearance: none; flex: none; width: 2.1rem; height: 2.1rem; margin: .1rem 0 0; border: 3px solid var(--beterraba); border-radius: 50%; background: #fff; display: grid; place-items: center; cursor: pointer; }
+.habito input:checked { background: var(--folha); border-color: var(--folha); }
+.habito input:checked::after { content: "✓"; color: #fff; font: 700 1.2rem/1 Arial, sans-serif; }
+.habito:has(input:checked) strong { text-decoration: line-through; text-decoration-color: var(--folha); }
+.medidor { display: flex; flex-wrap: wrap; align-items: center; gap: .5rem; font: 400 1.5rem/1 var(--titulo); }
+.medidor i { width: 2.2rem; height: 2.2rem; border-radius: 50%; background: #fff; border: 3px solid var(--beterraba); font-style: normal; display: grid; place-items: center; font-size: 1rem; opacity: .45; filter: grayscale(1); }
+.medidor::after { content: counter(feitos) " de 8 hábitos que já pratico"; margin-left: .6rem; }
+.habitos:has(#h1:checked) .medidor i:nth-of-type(1), .habitos:has(#h2:checked) .medidor i:nth-of-type(2),
+.habitos:has(#h3:checked) .medidor i:nth-of-type(3), .habitos:has(#h4:checked) .medidor i:nth-of-type(4),
+.habitos:has(#h5:checked) .medidor i:nth-of-type(5), .habitos:has(#h6:checked) .medidor i:nth-of-type(6),
+.habitos:has(#h7:checked) .medidor i:nth-of-type(7), .habitos:has(#h8:checked) .medidor i:nth-of-type(8) { opacity: 1; filter: none; background: var(--gema); }
+
+/* ===== Tabela (CSS-05: leitura) ===== */
+.rolagem { overflow-x: auto; margin-top: 2.5rem; }
+table { width: 100%; border-collapse: collapse; background: var(--papel); border: 3px solid var(--beterraba); font-size: 1rem; }
+caption { text-align: left; font-size: .9rem; color: var(--suave); padding-bottom: .6rem; }
+th, td { text-align: left; padding: .8rem 1rem; border-bottom: 2px dashed #c9c4ae; vertical-align: top; }
+thead th { background: var(--beterraba); color: #fff; font: 400 1.2rem var(--titulo); }
+
+/* ===== Mito ou verdade (details/summary) ===== */
+.mito { background: var(--papel); color: var(--tinta); border: 3px solid var(--gema); border-radius: 10px; margin-bottom: 1rem; }
+.mito summary { cursor: pointer; list-style: none; padding: 1rem 1.2rem; font: 400 1.4rem/1.2 var(--titulo); display: flex; justify-content: space-between; gap: 1rem; }
+.mito summary::-webkit-details-marker { display: none; }
+.mito summary::after { content: "+"; color: var(--tomate); font-size: 1.8rem; line-height: 1; transition: transform .3s; }
+.mito[open] summary::after { transform: rotate(45deg); }
+.mito[open] summary { background: var(--gema); border-radius: 6px 6px 0 0; }
+.mito p { padding: 1rem 1.2rem 0; margin: 0; } .mito p:last-child { padding-bottom: 1.1rem; }
+
+/* ===== Calculadora (nota fiscal, radios + calc() em CSS) ===== */
+.interativo { display: grid; grid-template-columns: repeat(auto-fit, minmax(310px, 1fr)); gap: 2rem; margin-top: 2rem; align-items: start; }
+.calc { --g: 200; --p: 19; background: #fff; color: var(--tinta); font-family: var(--recibo); border: 2px dashed var(--tinta); padding: 1.4rem; position: relative; }
+.calc:has(#g1:checked) { --g: 100; } .calc:has(#g3:checked) { --g: 400; } .calc:has(#g4:checked) { --g: 700; }
+.calc:has(#p1:checked) { --p: 5; } .calc:has(#p2:checked) { --p: 10; } .calc:has(#p4:checked) { --p: 30; }
+.calc h3 { text-align: center; border-bottom: 2px dashed var(--tinta); padding-bottom: .6rem; }
+.calc fieldset { border: 0; padding: 0; margin: 0 0 1rem; }
+.calc legend { font-weight: 700; margin-bottom: .4rem; font-size: 1rem; }
+.fichas { display: flex; flex-wrap: wrap; gap: .5rem; }
+.fichas label { cursor: pointer; }
+.fichas input { position: absolute; opacity: 0; }
+.fichas span { display: block; padding: .35rem .8rem; border: 2px solid var(--tinta); border-radius: 999px; font-size: .95rem; transition: background .2s; }
+.fichas input:checked + span { background: var(--tomate); color: #fff; border-color: var(--tomate); }
+.fichas input:focus-visible + span { outline: 3px solid var(--gema); outline-offset: 2px; }
+.total { counter-reset: ano calc(var(--g) * 52 * var(--p) / 100) sem calc(var(--p) * 52 / 100); border-top: 2px dashed var(--tinta); padding-top: 1rem; text-align: center; font-size: 1rem; }
+.total strong { display: block; font: 400 3rem/1.1 var(--titulo); color: var(--tomate); }
+.total strong::before { content: "R$ " counter(ano); }
+.total span::before { content: "É o mesmo que " counter(sem) " semanas de compras no lixo."; }
+
+/* ===== Quiz (radios + :has, sem JavaScript) ===== */
+.quiz { counter-reset: acertos; background: var(--papel); color: var(--tinta); border: 3px solid var(--beterraba); border-radius: 10px; padding: 1.4rem; }
+.q { border: 0; padding: 0; margin: 0 0 1.5rem; }
+.q legend { font: 400 1.4rem/1.2 var(--titulo); margin-bottom: .6rem; }
+.q:has(input:checked) { pointer-events: none; }
+.q:has(.ok input:checked) { counter-increment: acertos; }
+.op { display: block; margin-bottom: .5rem; cursor: pointer; }
+.op input { position: absolute; opacity: 0; }
+.op span { display: block; padding: .6rem 1rem; border: 2px solid var(--beterraba); border-radius: 8px; font-size: 1rem; line-height: 1.4; }
+.op:hover span { background: #f3efd8; }
+.op input:focus-visible + span { outline: 3px solid var(--gema); }
+.op input:checked + span { background: #ffd9d2; border-color: var(--tomate); }
+.q:has(input:checked) .ok span { background: #d6efc9; border-color: var(--folha); }
+.fb, .final { display: none; font-size: .95rem; line-height: 1.5; margin: .5rem 0 0; }
+.q:has(input:checked) .fb { display: block; }
+.quiz:has(input[name="q1"]:checked):has(input[name="q2"]:checked):has(input[name="q3"]:checked) .final { display: block; }
+.final { font: 400 1.5rem/1.3 var(--titulo); }
+.final::before { content: "Você acertou " counter(acertos) " de 3. "; }
+.btn { font: 400 1.2rem var(--titulo); background: var(--folha); color: #fff; border: 0; border-radius: 6px; padding: .5rem 1.3rem; cursor: pointer; margin-top: .8rem; }
+
+.frase { border-left: 8px solid var(--gema); padding: .3rem 0 .3rem 1.2rem; font-size: 1.5rem; font-style: italic; max-width: 56ch; margin: 2.5rem 0 0; }
+
+/* ===== Rodapé ===== */
+.rodape { background: var(--tinta); color: #f2ede0; padding-block: 3rem; font-size: 1rem; }
+.rodape a { color: var(--gema); } .rodape h2 { font-size: 2rem; }
+.rodape p { max-width: none; margin-bottom: .5rem; } .rodape li { margin-bottom: .5rem; }
+
+/* ===== Responsividade (CSS-09) ===== */
+@media (max-width: 760px) {
+  .hero__grid { grid-template-columns: 1fr; }
+  .barra { grid-template-columns: 1fr; gap: .3rem; }
+  .secao { padding-block: 3.2rem; }
+}
+@media (prefers-reduced-motion: reduce) {
+  * { animation: none !important; transition: none !important; scroll-behavior: auto !important; }
+}

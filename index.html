@@ -1,0 +1,242 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="Projeto Integrador da 1ª série: conscientização sobre o desperdício de alimentos, seus impactos e como evitá-lo.">
+  <title>Prato Cheio, Planeta Vazio: desperdício de alimentos</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <header class="topo">
+    <nav class="container menu" aria-label="Navegação principal">
+      <a class="marca" href="#inicio">Prato Cheio, Planeta Vazio</a>
+      <ul>
+        <li><a href="#problema">O problema</a></li>
+        <li><a href="#ambiente">Meio ambiente</a></li>
+        <li><a href="#nos-afeta">Pessoas</a></li>
+        <li><a href="#evitar">Como evitar</a></li>
+        <li><a href="#curiosidades">Curiosidades</a></li>
+        <li><a href="#interativo">Teste-se</a></li>
+        <li><a href="#conclusao">Conclusão</a></li>
+        <li><a href="#referencias">Referências</a></li>
+      </ul>
+    </nav>
+    <div class="prog" aria-hidden="true"></div>
+  </header>
+
+  <div class="faixa" aria-hidden="true">
+    <div>🍎 🥦 🍞 🥕 🍌 🍅 🧀 🥬 🍋 🌽 🍎 🥦 🍞 🥕 🍌 🍅 🧀 🥬 🍋 🌽 🍎 🥦 🍞 🥕 🍌 🍅 🧀 🥬 🍋 🌽 🍎 🥦 🍞 🥕 🍌 🍅 🧀 🥬 🍋 🌽</div>
+  </div>
+
+  <main id="inicio">
+
+    <section class="hero container" aria-labelledby="titulo-principal">
+      <div class="hero__grid">
+        <div>
+          <h1 id="titulo-principal"><span>Um terço</span> da comida produzida no mundo não chega a ser comida.</h1>
+          <p class="lead">Este site apresenta o projeto da 1ª série sobre o desperdício de alimentos: por que ele acontece, o que causa no planeta e nas pessoas e o que podemos fazer em casa, na escola e no mercado.</p>
+        </div>
+        <figure style="margin:0">
+          <div class="prato" role="img" aria-label="Prato em que um terço está preenchido em vermelho">
+            <div><b>1/3</b>cerca de 1,3 bilhão de toneladas por ano</div>
+          </div>
+          <figcaption>Ilustração feita em CSS pelo grupo. Estimativa: FAO (ONU para Alimentação e Agricultura).</figcaption>
+        </figure>
+      </div>
+    </section>
+
+    <section class="secao escura" id="problema" aria-labelledby="t-problema">
+      <div class="container">
+        <h2 id="t-problema">Qual é o problema investigado?</h2>
+        <p class="lead">Pergunta do grupo: onde o alimento se perde e o que isso provoca no meio ambiente e na sociedade?</p>
+        <p>Existem dois conceitos diferentes. A <strong>perda de alimentos</strong> acontece no campo, na colheita, no transporte e no armazenamento. O <strong>desperdício</strong> acontece no fim da cadeia: mercados, restaurantes e, principalmente, dentro das nossas casas.</p>
+        <figure class="grafico">
+          <div class="barra"><span>Domicílios</span><div class="trilho"><div class="valor v60">60%</div></div></div>
+          <div class="barra"><span>Alimentação fora do lar</span><div class="trilho"><div class="valor v28">28%</div></div></div>
+          <div class="barra"><span>Varejo</span><div class="trilho"><div class="valor v12">12%</div></div></div>
+          <figcaption>Gráfico 1: de onde vem o desperdício de alimentos no mundo (2022). Fonte: PNUMA, Food Waste Index Report 2024. Gráfico refeito em CSS pelo grupo.</figcaption>
+        </figure>
+        <p style="margin-top:1.5rem">Ou seja: a maior parte do problema está nas decisões do dia a dia, e isso significa que também podemos ser parte da solução.</p>
+      </div>
+    </section>
+
+    <section class="secao container" id="ambiente" aria-labelledby="t-ambiente">
+      <h2 id="t-ambiente">Como o desperdício afeta o meio ambiente</h2>
+      <p>Quando um alimento é jogado fora, tudo o que foi gasto para produzi-lo também é jogado fora: terra, água, energia, combustível e trabalho.</p>
+      <div class="grade">
+        <article class="etiqueta etiqueta--tomate">
+          <h3>🔥 Gases do efeito estufa</h3>
+          <p>O PNUMA estima que perdas e desperdício de alimentos estejam ligados a 8% a 10% das emissões globais de gases do efeito estufa. Em aterros, a comida apodrece sem oxigênio e libera metano, um gás muito potente no aquecimento global.</p>
+        </article>
+        <article class="etiqueta etiqueta--folha">
+          <h3>💧 Água desperdiçada</h3>
+          <p>A agricultura é a atividade que mais consome água doce. Descartar comida também significa descartar a água usada para irrigar plantações e criar animais.</p>
+        </article>
+        <article class="etiqueta etiqueta--gema">
+          <h3>🌳 Uso da terra</h3>
+          <p>A FAO estima que cerca de 28% das terras agrícolas do mundo produzem alimentos que são perdidos ou desperdiçados. Isso pressiona florestas e outros ecossistemas.</p>
+        </article>
+      </div>
+    </section>
+
+    <section class="secao escura" id="nos-afeta" aria-labelledby="t-afeta">
+      <div class="container">
+        <h2 id="t-afeta">Como o desperdício afeta as pessoas</h2>
+        <p>O problema não é só ambiental. Ele também pesa no bolso e na mesa de quem tem fome.</p>
+        <div class="grade">
+          <article class="etiqueta etiqueta--tomate">
+            <p class="numero">+700 mi</p>
+            <h3>Pessoas com fome</h3>
+            <p>Segundo a ONU, mais de 700 milhões de pessoas passam fome no mundo, enquanto toneladas de comida vão para o lixo.</p>
+          </article>
+          <article class="etiqueta etiqueta--gema">
+            <p class="numero">19%</p>
+            <h3>Do alimento disponível</h3>
+            <p>O PNUMA calcula que cerca de 19% do alimento disponível para consumidores foi desperdiçado em 2022 em domicílios, restaurantes e varejo.</p>
+          </article>
+          <article class="etiqueta etiqueta--folha">
+            <p class="numero">R$</p>
+            <h3>Dinheiro no lixo</h3>
+            <p>Comprar demais e deixar estragar é gasto sem retorno. Planejar as compras economiza dinheiro da família.</p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="secao container" id="evitar" aria-labelledby="t-evitar">
+      <h2 id="t-evitar">Como evitar o desperdício</h2>
+      <p>Pequenas ações repetidas todos os dias fazem grande diferença. Estes são os passos que o grupo recomenda.</p>
+      <div class="habitos">
+        <p class="lead" style="margin-top:1.5rem">Marque os hábitos que você já pratica e veja seu progresso:</p>
+        <ol>
+          <li><label class="habito"><input type="checkbox" id="h1"><span><strong>Planeje as compras.</strong> Faça uma lista com base no que já tem em casa e compre apenas o necessário.</span></label></li>
+          <li><label class="habito"><input type="checkbox" id="h2"><span><strong>Armazene corretamente.</strong> Coloque os alimentos mais antigos na frente e guarde cada tipo no local adequado.</span></label></li>
+          <li><label class="habito"><input type="checkbox" id="h3"><span><strong>Entenda as datas.</strong> “Válido até” indica segurança. “Consumir de preferência antes de” indica qualidade, e o alimento pode estar bom depois.</span></label></li>
+          <li><label class="habito"><input type="checkbox" id="h4"><span><strong>Aproveite integralmente.</strong> Talos, folhas, cascas e sementes podem virar caldos, bolos e refogados.</span></label></li>
+          <li><label class="habito"><input type="checkbox" id="h5"><span><strong>Sirva porções menores.</strong> É melhor repetir o prato do que deixar sobra.</span></label></li>
+          <li><label class="habito"><input type="checkbox" id="h6"><span><strong>Reaproveite as sobras</strong> em novas receitas ou congele para outro dia.</span></label></li>
+          <li><label class="habito"><input type="checkbox" id="h7"><span><strong>Doe o que sobrar</strong> a bancos de alimentos e instituições. No Brasil, a Lei 14.016/2020 facilita a doação de alimentos próprios para consumo.</span></label></li>
+          <li><label class="habito"><input type="checkbox" id="h8"><span><strong>Faça compostagem</strong> com o que não puder ser comido, transformando resto em adubo.</span></label></li>
+        </ol>
+        <div class="medidor" aria-live="polite"><i>🍎</i><i>🥦</i><i>🍞</i><i>🥕</i><i>🍌</i><i>🍅</i><i>🧀</i><i>🌱</i></div>
+      </div>
+
+      <div class="rolagem">
+        <table>
+          <caption>Tabela 1: dicas rápidas de conservação (orientações gerais de uso doméstico).</caption>
+          <thead><tr><th scope="col">Alimento</th><th scope="col">Dica para durar mais</th></tr></thead>
+          <tbody>
+            <tr><th scope="row">🥬 Folhas verdes</th><td>Lavar, secar bem e guardar em pote com papel toalha na geladeira.</td></tr>
+            <tr><th scope="row">🍌 Banana</th><td>Madura demais? Congele sem casca para vitaminas e bolos.</td></tr>
+            <tr><th scope="row">🍞 Pão</th><td>Fatie e congele; torre apenas as fatias que for comer.</td></tr>
+            <tr><th scope="row">🍚 Arroz e feijão cozidos</th><td>Guardar em porções no congelador e esquentar só o necessário.</td></tr>
+          </tbody>
+        </table>
+      </div>
+    </section>
+
+    <section class="secao escura" id="curiosidades" aria-labelledby="t-curiosidades">
+      <div class="container">
+        <h2 id="t-curiosidades">Curiosidades: mito ou verdade?</h2>
+        <p>Clique em cada afirmação para descobrir a resposta.</p>
+        <details class="mito"><summary>Frutas tortas ou manchadas são piores para a saúde.</summary>
+          <p><strong>Mito.</strong> Muitas são descartadas só pela aparência, mas têm o mesmo valor nutritivo.</p></details>
+        <details class="mito"><summary>Cascas e talos também podem ser comidos.</summary>
+          <p><strong>Verdade.</strong> Cascas de banana, talos de brócolis e folhas de beterraba são comestíveis e rendem receitas saborosas.</p></details>
+        <details class="mito"><summary>Existe um dia mundial contra o desperdício de alimentos.</summary>
+          <p><strong>Verdade.</strong> Em 29 de setembro é celebrado o Dia Internacional de Conscientização sobre Perdas e Desperdício de Alimentos, criado pela ONU.</p></details>
+        <details class="mito"><summary>O desperdício mundial passa de 1 bilhão de toneladas por ano.</summary>
+          <p><strong>Verdade.</strong> O PNUMA estimou 1,05 bilhão de toneladas de alimentos desperdiçados em 2022 nos domicílios, restaurantes e varejo.</p></details>
+        <blockquote class="frase">Cada refeição bem aproveitada é um pequeno ato de cuidado com o planeta.</blockquote>
+      </div>
+    </section>
+
+    <section class="secao container" id="interativo" aria-labelledby="t-interativo">
+      <h2 id="t-interativo">Teste-se e calcule</h2>
+      <p>Descubra quanto dinheiro vai para o lixo na sua casa e veja o que você aprendeu.</p>
+      <div class="interativo">
+
+        <form class="calc" aria-label="Calculadora do desperdício">
+          <h3>Nota do desperdício</h3>
+          <fieldset>
+            <legend>Gasto semanal com comida</legend>
+            <div class="fichas">
+              <label><input type="radio" name="g" id="g1"><span>R$ 100</span></label>
+              <label><input type="radio" name="g" id="g2" checked><span>R$ 200</span></label>
+              <label><input type="radio" name="g" id="g3"><span>R$ 400</span></label>
+              <label><input type="radio" name="g" id="g4"><span>R$ 700</span></label>
+            </div>
+          </fieldset>
+          <fieldset>
+            <legend>Quanto vai para o lixo</legend>
+            <div class="fichas">
+              <label><input type="radio" name="p" id="p1"><span>5%</span></label>
+              <label><input type="radio" name="p" id="p2"><span>10%</span></label>
+              <label><input type="radio" name="p" id="p3" checked><span>19%</span></label>
+              <label><input type="radio" name="p" id="p4"><span>30%</span></label>
+            </div>
+          </fieldset>
+          <div class="total" aria-live="polite">Em um ano, sua família joga fora:<strong></strong><span></span></div>
+          <p style="font-size:.85rem;margin:.8rem 0 0">19% é a média mundial de alimento disponível desperdiçado (PNUMA, 2022).</p>
+        </form>
+
+        <form class="quiz" aria-label="Quiz rápido">
+          <h3>Quiz rápido</h3>
+          <fieldset class="q">
+            <legend>1. Onde acontece a maior parte do desperdício de alimentos no mundo?</legend>
+            <label class="op ok"><input type="radio" name="q1"><span>Nos domicílios</span></label>
+            <label class="op"><input type="radio" name="q1"><span>No varejo</span></label>
+            <label class="op"><input type="radio" name="q1"><span>Nas lavouras</span></label>
+            <p class="fb">Os domicílios respondem por cerca de 60% do desperdício (PNUMA).</p>
+          </fieldset>
+          <fieldset class="q">
+            <legend>2. “Consumir de preferência antes de” indica o quê?</legend>
+            <label class="op"><input type="radio" name="q2"><span>Segurança do alimento</span></label>
+            <label class="op ok"><input type="radio" name="q2"><span>Qualidade do alimento</span></label>
+            <label class="op"><input type="radio" name="q2"><span>Que já estragou</span></label>
+            <p class="fb">É uma questão de qualidade. Já “válido até” indica segurança.</p>
+          </fieldset>
+          <fieldset class="q">
+            <legend>3. Qual gás potente é liberado quando comida apodrece em aterros?</legend>
+            <label class="op"><input type="radio" name="q3"><span>Hélio</span></label>
+            <label class="op"><input type="radio" name="q3"><span>Oxigênio</span></label>
+            <label class="op ok"><input type="radio" name="q3"><span>Metano</span></label>
+            <p class="fb">Sem oxigênio, a decomposição libera metano, que agrava o aquecimento global.</p>
+          </fieldset>
+          <p class="final" aria-live="polite"></p>
+          <button class="btn" type="reset">Refazer o quiz</button>
+        </form>
+
+      </div>
+    </section>
+
+    <section class="secao escura" id="conclusao" aria-labelledby="t-conclusao">
+      <div class="container">
+        <h2 id="t-conclusao">Conclusão do grupo</h2>
+        <p>Ao pesquisar o tema, percebemos que o desperdício de alimentos une três assuntos que estudamos na 1ª série: a resolução de problemas com números (Matemática), a sustentabilidade (Biologia) e o impacto dos processos e resíduos (Química e Tecnociência).</p>
+        <p>Concluímos que a maior parte do desperdício acontece nas casas e que mudar hábitos simples, como planejar, armazenar e reaproveitar, é a solução mais acessível para reduzir o impacto ambiental e social.</p>
+      </div>
+    </section>
+
+  </main>
+
+  <footer class="rodape" id="referencias">
+    <div class="container">
+      <h2>Referências</h2>
+      <ol>
+        <li>PNUMA (Programa das Nações Unidas para o Meio Ambiente). <em>Food Waste Index Report 2024</em>. Nairobi, 2024.</li>
+        <li>FAO. <em>O estado da alimentação e da agricultura: perdas e desperdício de alimentos</em>. Roma.</li>
+        <li>FAO et al. <em>O estado da segurança alimentar e nutricional no mundo (SOFI)</em>. Roma.</li>
+        <li>BRASIL. Lei nº 14.016, de 23 de junho de 2020. Doação de alimentos excedentes.</li>
+      </ol>
+      <p>Projeto Integrador: Resolução de Problemas | 1ª série do Ensino Médio | Programação e IA | Colégio Estadual Cívico-Militar Duque de Caxias, Maringá-PR.</p>
+      <p>Grupo: ______________________ | Turma: ____________ | Professor: Ezequiel Martins Ascêncio</p>
+      <p><a href="#inicio">Voltar ao topo</a></p>
+    </div>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>
